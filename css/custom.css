@@ -1,0 +1,19 @@
+/* 全局背景图设置 */
+#web_bg {
+    background: url('https://t.mwm.moe/pc') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* 滚动时背景固定，很有高级感 */
+}
+
+/* 如果你觉得背景太亮，可以给它加一个半透明遮罩 */
+#web_bg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* 浅色模式遮罩 */
+}
+
+[data-theme='dark'] #web_bg::before {
+    background-color: rgba(0, 0, 0, 0.5); /* 深色模式遮罩，保护眼睛 */
+}
